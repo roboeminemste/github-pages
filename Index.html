@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Proxy</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+        input { width: 80%; padding: 10px; margin: 10px 0; }
+        button { padding: 10px 20px; }
+        iframe { width: 90%; height: 500px; border: 1px solid #ccc; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h2>Simple Web Proxy</h2>
+    <input type="text" id="urlInput" placeholder="Enter a URL">
+    <button onclick="loadProxy()">Go</button>
+    <iframe id="proxyFrame"></iframe>
+
+    <script>
+        function loadProxy() {
+            let url = document.getElementById('urlInput').value;
+            let proxyUrl = "https://yourproxy.render.com/proxy?url=" + encodeURIComponent(url);
+            document.getElementById('proxyFrame').src = proxyUrl;
+        }
+    </script>
+</body>
+</html>
